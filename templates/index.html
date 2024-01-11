@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Prediction Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 align="center">EMPLOYEE ATTRITION PREDICTION</h2>
+        <h3>{{prediction_response}}</h3>
+        <p><b>Please fill the form below</b></p>
+        <form action="{{url_for('predict')}}" method="post">
+            <label for="over_time">Over Time?</label>
+            <select name="over_time">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label for="marital_single">Marital Status Single?</label>
+            <select name="marital_single">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label for="working_yrs">Total Working Years:</label>
+            <input type="text" name="working_yrs" size="2"/>
+
+            <label for="working_yrs">Job Level:</label>
+            <input type="text" name="job_level" size="2"/>
+
+           <label for="working_yrs">Under 25?</label>
+            <select name="under_25">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label for="working_yrs">Years In Current Role:</label>
+            <input type="text" name="yr_current_role" size="2"/>
+
+            <label for="working_yrs">Monthly Income:</label>
+            <input type="text" name="month_income" size="2"/>
+
+            <label for="working_yrs">Age:</label>
+             <input type="text" name="age" size="2"/>
+
+            <label for="working_yrs">Job Role_Sales Representative?</label>
+            <select name="jobrole_sales_rep">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+             <label for="working_yrs">Years With Curr Manager:</label>
+            <input type="text" name="yrs_with_manager" size="2"/>
+
+
+            <button type="submit">Predict Attrition</button>
+        </form>
+
+
+    </div>
+</body>
+</html>
